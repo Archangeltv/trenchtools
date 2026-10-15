@@ -5,11 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "trench.tools: on-chain toolkit for Robinhood Chain",
     short_name: "trench.tools",
     description:
-      "Degen on-chain tools for Robinhood Chain. Transactions are built in your browser and signed by your wallet, with no server in between.",
+      "The on-chain toolkit for Robinhood Chain: batch transfers, token deployment, approval auditing and more, running entirely in your browser.",
     start_url: "/",
     display: "standalone",
-    background_color: "#FFFFFF",
-    theme_color: "#EC4899",
+    background_color: "#0a0a0a",
+    theme_color: "#ccff00",
     icons: [
       {
         src: "/icon-192.png",

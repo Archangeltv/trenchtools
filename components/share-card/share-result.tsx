@@ -25,7 +25,7 @@ import { renderShareCard } from "./render";
 interface ShareResultProps {
   /** What the card should say. Must never contain secrets (e.g. private keys). */
   content: ShareCardContent;
-  /** Download / share filename, e.g. "robins-burn.png". */
+  /** Download / share filename, e.g. "trench-burn.png". */
   filename: string;
   /** Native-share sheet title. */
   title?: string;

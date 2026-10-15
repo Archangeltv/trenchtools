@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   Activity,
@@ -13,8 +13,6 @@ import {
   Pause,
   Play,
   RotateCw,
-  Sparkles,
-  Zap,
 } from "lucide-react";
 import { formatGwei } from "viem";
 
@@ -124,7 +122,6 @@ export function NetworkTracker() {
     return () => clearInterval(id);
   }, []);
 
-  const stale = isError && Boolean(data);
   const health: Health = isError
     ? "red"
     : data

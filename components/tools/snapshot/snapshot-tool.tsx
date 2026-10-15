@@ -12,19 +12,15 @@ import {
   Download,
   ExternalLink,
   FileSpreadsheet,
-  Image as ImageIcon,
   RotateCw,
   Search,
   ShieldCheck,
-  Sparkles,
   Users,
-  Wallet,
   X,
 } from "lucide-react";
 import Papa from "papaparse";
 import {
   erc20Abi,
-  formatUnits,
   getAddress,
   isAddress,
   parseAbiItem,
@@ -37,7 +33,6 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { addressUrl, tokenUrl } from "@/lib/explorer";
 import { publicClient } from "@/lib/public-client";
-import { cn } from "@/lib/utils";
 
 export interface TokenMeta {
   standard: "erc20" | "erc721" | "erc1155";
@@ -122,17 +117,19 @@ export function SnapshotTool() {
   useEffect(() => {
     const trimmed = contractInput.trim();
     if (!isAddress(trimmed)) {
-      setTokenMeta(null);
-      setMetaError(null);
-      return;
+      const timer = setTimeout(() => {
+        setTokenMeta(null);
+        setMetaError(null);
+      }, 0);
+      return () => clearTimeout(timer);
     }
 
     const checkAddr = getAddress(trimmed);
     let cancelled = false;
-    setIsLoadingMeta(true);
-    setMetaError(null);
 
     async function fetchMetadata() {
+      setIsLoadingMeta(true);
+      setMetaError(null);
       try {
         const bytecode = await publicClient.getBytecode({ address: checkAddr });
         if (!bytecode || bytecode === "0x") {
@@ -230,9 +227,12 @@ export function SnapshotTool() {
       }
     }
 
-    void fetchMetadata();
+    const timer = setTimeout(() => {
+      void fetchMetadata();
+    }, 0);
     return () => {
       cancelled = true;
+      clearTimeout(timer);
     };
   }, [contractInput]);
 
@@ -250,7 +250,7 @@ export function SnapshotTool() {
   }
 
   // Parse Blockscout CSV content into records
-  function parseAndSetHolders(csvText: string, projectName: string) {
+  function parseAndSetHolders(csvText: string) {
     const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
     const rows = parsed.data as Record<string, string>[];
     if (!rows || rows.length === 0) {
@@ -342,7 +342,7 @@ export function SnapshotTool() {
       }
 
       // Parse and display
-      parseAndSetHolders(csvText, cleanProjectName);
+      parseAndSetHolders(csvText);
 
       // Auto download if enabled, renamed strictly to trenchtoolscsv_<project>.csv
       if (autoDownloadCsv) {
@@ -373,7 +373,7 @@ export function SnapshotTool() {
         .replace(/[^a-z0-9_-]+/g, "_");
 
       setDownloadFilename(`trenchtoolscsv_${cleanProjectName}.csv`);
-      parseAndSetHolders(text, cleanProjectName);
+      parseAndSetHolders(text);
 
       if (!tokenMeta) {
         setTokenMeta({

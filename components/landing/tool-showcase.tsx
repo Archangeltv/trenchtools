@@ -8,7 +8,6 @@ import {
   Check,
   Copy,
   Terminal,
-  Zap,
 } from "lucide-react";
 
 import { type ToolCategory, type ToolMeta, tools } from "@/lib/tools";

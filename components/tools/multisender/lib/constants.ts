@@ -14,7 +14,7 @@ export const TOKEN_CHUNK_SIZE = 300;
 export const MAX_RECIPIENTS = 1000;
 
 /** localStorage key holding a user-deployed disperse address, namespaced per chain. */
-export const DISPERSE_STORAGE_KEY = "robins.disperse.4663";
+export const DISPERSE_STORAGE_KEY = "trench.disperse.4663";
 
 /** Optional pre-deployed disperse address supplied via env. */
 export const ENV_DISPERSE_ADDRESS =

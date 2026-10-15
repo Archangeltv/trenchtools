@@ -29,7 +29,7 @@ const OUTPUT_SELECTION = {
  * @param {string} opts.repoRoot - absolute path to the repo root.
  * @param {string} opts.contractPath - absolute path to the .sol entry file.
  * @param {string} opts.contractSourceKey - source-unit name to register the
- *   entry file under (e.g. "contracts/RobinsToken.sol").
+ *   entry file under (e.g. "contracts/TrenchToken.sol").
  * @param {string} opts.contractName - the contract name to extract from
  *   solc's output (must match `contract <Name>` in the source).
  * @param {string} opts.outputPath - absolute path to write the artifact to.

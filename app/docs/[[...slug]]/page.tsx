@@ -15,7 +15,7 @@ import { source } from "@/lib/source";
 // tab from reading "trench.tools · trench.tools" and gives the page a distinct
 // heading for search and social cards.
 function resolveDocTitle(title: string): { title: string; isIndex: boolean } {
-  if (title === "trench.tools" || title === "robins.tools") return { title: "trench.tools docs", isIndex: true };
+  if (title === "trench.tools") return { title: "trench.tools docs", isIndex: true };
   return { title, isIndex: false };
 }
 

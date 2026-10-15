@@ -37,7 +37,7 @@ See [Privacy by design](https://trench.tools/docs/concepts/privacy-by-design) fo
 
 ## Stack
 
-Next.js (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 · shadcn/ui · wagmi · viem · Reown AppKit · Fumadocs (MDX). Hosted on Vercel.
+Next.js (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 · shadcn/ui · wagmi · viem · RainbowKit · Fumadocs (MDX). Hosted on Vercel.
 
 ## Network
 
@@ -64,4 +64,3 @@ The app runs at http://localhost:3000.
 ## Copyright
 
 Copyright (c) 2026 trench.tools. All rights reserved.
-# trenchtools

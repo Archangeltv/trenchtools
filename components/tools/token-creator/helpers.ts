@@ -1,18 +1,18 @@
 import { BaseError, formatEther, parseUnits, type Abi, type Hex } from "viem";
 
-import robinsToken from "@/lib/abis/robins-token.json";
+import trenchToken from "@/lib/abis/trench-token.json";
 
-/** Compiled RobinsToken ABI (loose-typed so viem uses the runtime-value overloads). */
-export const tokenAbi = robinsToken.abi as Abi;
+/** Compiled TrenchToken ABI (loose-typed so viem uses the runtime-value overloads). */
+export const tokenAbi = trenchToken.abi as Abi;
 
-/** Creation bytecode for RobinsToken. */
-export const tokenBytecode = robinsToken.bytecode as Hex;
+/** Creation bytecode for TrenchToken. */
+export const tokenBytecode = trenchToken.bytecode as Hex;
 
 /** Solidity compiler version the artifact was built with (for the verification hint). */
-export const solcLongVersion = robinsToken.solcVersion;
+export const solcLongVersion = trenchToken.solcVersion;
 
 /** Contract name as it appears in the standard-JSON sources. */
-export const contractName = robinsToken.contractName;
+export const contractName = trenchToken.contractName;
 
 /** Result of validating the human-entered initial supply. */
 export type SupplyParse =
@@ -68,7 +68,7 @@ export function humanizeError(err: unknown): string {
  * verify the deployed contract on Blockscout.
  */
 export function downloadVerificationJson(): void {
-  const json = JSON.stringify(robinsToken.standardJsonInput, null, 2);
+  const json = JSON.stringify(trenchToken.standardJsonInput, null, 2);
   const blob = new Blob([json], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");

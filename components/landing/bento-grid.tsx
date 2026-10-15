@@ -6,12 +6,10 @@ import {
   CheckCircle2,
   Cpu,
   Flame,
-  Layers,
   Send,
   ShieldAlert,
   Sparkles,
   Terminal,
-  Zap,
 } from "lucide-react";
 
 export function BentoGrid() {

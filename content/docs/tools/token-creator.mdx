@@ -7,14 +7,14 @@ The Token Creator deploys a standard, audit-friendly ERC-20 from your wallet, wi
 
 ## What it does
 
-- Deploys a precompiled `RobinsToken` ERC-20 (OpenZeppelin-based) directly from your wallet.
+- Deploys a precompiled `TrenchToken` ERC-20 (OpenZeppelin-based) directly from your wallet.
 - Lets you set name, symbol, decimals, initial supply, and the owner, and flag the token mintable and/or burnable.
 - Estimates the deployment cost before you sign.
 - Produces a downloadable verification file so the source can be verified on Blockscout.
 
 ## The contract
 
-`RobinsToken` is a minimal ERC-20 with no pausing, upgradeability, or fees. Its behavior is controlled by two flags fixed at deployment:
+`TrenchToken` is a minimal ERC-20 with no pausing, upgradeability, or fees. Its behavior is controlled by two flags fixed at deployment:
 
 - **Mintable**: the owner can mint more supply later. If off, the total supply is fixed at what you mint on deployment.
 - **Burnable**: holders can burn their own tokens (and burn from an allowance). If off, tokens cannot be burned by the contract's own functions.
@@ -38,7 +38,7 @@ The initial supply is minted to the owner address when the token is deployed.
 
 The success card includes a **Contract verification** block. Verifying publishes the human-readable source on the explorer so anyone can confirm the bytecode matches.
 
-1. Click **Download verification JSON**. This saves `robins-token-verification.json`, the Solidity standard-JSON input containing every source file used.
+1. Click **Download verification JSON**. This saves `trench-token-verification.json`, the Solidity standard-JSON input containing every source file used.
 2. On the explorer, open your token's address and choose to verify the contract using **Standard JSON input**.
 3. Use these settings:
 
@@ -46,7 +46,7 @@ The success card includes a **Contract verification** block. Verifying publishes
    | ------------------- | ------------------------- |
    | Compiler            | `v0.8.36+commit.8a079791` |
    | Optimizer           | Enabled, 200 runs         |
-   | Contract name       | `RobinsToken`             |
+   | Contract name       | `TrenchToken`             |
    | Standard JSON input | the downloaded file       |
 
 4. Upload the file and submit. Constructor arguments are auto-detected from the deployment, so you do not need to enter them by hand.

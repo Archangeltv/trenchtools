@@ -4,8 +4,6 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   Flame,
-  Layers,
-  Radio,
   Send,
   ShieldCheck,
   Zap,

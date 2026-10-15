@@ -4,10 +4,10 @@ pragma solidity ^0.8.24;
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-/// @title RobinsToken
+/// @title TrenchToken
 /// @notice Minimal, audit-friendly ERC-20 with optional mint/burn toggles, deployed
-/// from the robins.tools Token Creator. No pausing, no upgradeability, no fees.
-contract RobinsToken is ERC20, Ownable {
+/// from the trench.tools Token Creator. No pausing, no upgradeability, no fees.
+contract TrenchToken is ERC20, Ownable {
     /// @notice Thrown when `mint` is called but minting was disabled at deployment.
     error NotMintable();
 
