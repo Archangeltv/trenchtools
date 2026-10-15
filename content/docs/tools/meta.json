@@ -1,0 +1,19 @@
+{
+  "title": "Tools",
+  "pages": [
+    "multisender",
+    "token-creator",
+    "approvals",
+    "burner",
+    "contract",
+    "balances",
+    "snapshot",
+    "decoder",
+    "network",
+    "merkle",
+    "sign",
+    "converter",
+    "vanity",
+    "address-utils"
+  ]
+}

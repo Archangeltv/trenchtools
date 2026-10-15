@@ -1,0 +1,31 @@
+---
+title: Token & NFT Holder Snapshot
+description: Fetch verified token and NFT holder snapshots on Robinhood Chain from Blockscout and export trenchtoolscsv spreadsheets.
+---
+
+The Holder Snapshot engine connects directly to Robinhood Chain's official Blockscout explorer index (`robinhoodchain.blockscout.com`) to extract instant, verified holder lists for any token or NFT contract. Every snapshot automatically downloads as `trenchtoolscsv_<project>.csv` ready for analytics and batch airdrops.
+
+## Supported Standards
+
+- **ERC-20 Fungible Tokens**: Full token balances, supply fractions, and whale dominance.
+- **ERC-721 NFTs**: NFT ownership, collector ranks, and collection shares.
+- **ERC-1155 Multi-Tokens**: Edition counts and multi-token balances.
+
+## What it does
+
+- Extracts verified holders and balances for any contract on Robinhood Chain directly from Blockscout in sub-second speed.
+- Automatically renames and downloads the snapshot file as `trenchtoolscsv_<project>.csv`.
+- Filters out burn addresses (`0x000...000`, `0x000...dEaD`) from rankings.
+- Calculates holder ranks, balances, and percentage share of circulating supply or collection.
+- Provides 1-click export formatted for the trench.tools [Batch Multisender](/tools/multisender) (weighted by holdings or 1-per-holder).
+
+## Step by step
+
+1. **Enter target contract address.** Paste any ERC-20 token or ERC-721/1155 NFT contract address, or pick a preset like `CASHCAT ($CASHCAT)` or `TARTAGLIA ($TATA)`.
+2. **Click "Take Holder Snapshot".** The engine queries the Blockscout explorer API directly, fetches verified holder records, and parses the full list.
+3. **Automatic CSV download.** The browser immediately downloads `trenchtoolscsv_<project>.csv` containing the full verified snapshot.
+4. **Export for Airdrops.** Copy rows with 1-click in `address,amount` format and paste them straight into the [Batch Multisender](/tools/multisender) to distribute tokens.
+
+## Fees and gas
+
+Free. The Holder Snapshot tool is entirely read-only and queries the public explorer index. No wallet connection or transaction gas is required.
